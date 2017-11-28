@@ -1,0 +1,20 @@
+<?php
+return [
+    /*
+    |--------------------------------------------------------------------------
+    | Application Constants
+    |--------------------------------------------------------------------------
+    |
+    | Constants can be used by
+    | Config::get('constants.CONSTANT_NAME');
+    |
+    */
+
+    // Pagination limit
+    'ADMIN_PER_PAGE' => 20,
+    'API_PER_PAGE' => 10,
+    'PROFILE_IMAGE_WIDTH' => 1200,
+    'PROFILE_IMAGE_HEIGHT' => 800,
+    'GOOGLE_MAPS_KEY' => env('GOOGLE_MAPS_KEY'),
+
+];

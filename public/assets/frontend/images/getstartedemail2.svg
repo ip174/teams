@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="575px" height="48px" viewBox="0 0 575 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="0" y="0" width="201" height="46" rx="3"></rect>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Final_HomePage_V2" transform="translate(-380.000000, -326.000000)">
+            <g id="Group-5" transform="translate(380.000000, 327.000000)">
+                <path d="M0.693437336,3.00044415 C0.693437336,1.34334461 2.03074709,0 3.69291085,0 L362.000526,0 C363.65709,0 365,1.35178054 365,3.00044415 L365,42.9995558 C365,44.6566554 363.66269,46 362.000526,46 L3.69291085,46 C2.03634737,46 0.693437336,44.6482195 0.693437336,42.9995558 L0.693437336,3.00044415 Z" id="input-copy-2" stroke="#F9F9FB" fill="#F9F9FB" opacity="0.265568388"></path>
+                <g id="Group-2-Copy" transform="translate(373.000000, 0.000000)">
+                    <g id="Rectangle-1">
+                        <use fill="#61C46E" fill-rule="evenodd" xlink:href="#path-1"></use>
+                        <rect stroke="#61C46E" stroke-width="1" x="-0.5" y="-0.5" width="202" height="47" rx="3"></rect>
+                    </g>
+                    <text id="Get-Started---It’s-F" font-family="OpenSans, Open Sans" font-size="16" font-weight="normal" fill="#FFFFFF">
+                        <tspan x="21.09375" y="29">Get Started - It’s Free!</tspan>
+                    </text>
+                </g>
+                <text id="Enter-your-email…" opacity="0.799026268" font-family="OpenSans, Open Sans" font-size="16" font-weight="normal" line-spacing="24" fill="#FFFFFF">
+                    <tspan x="20.417041" y="29">Enter your email…</tspan>
+                </text>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,396 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+@media (max-width:991px) {
+
+  .menu-content.mobile-dark {
+    background-color: #2b303b !important;
+  }
+  .menu-content.mobile-dark .menu > li.classic > nav ul,
+  .menu-content.mobile-dark .menu > li.horizontal > nav,
+  .menu-content.mobile-dark .menu > li.mega .container {
+    background-color: #21252d;
+  }
+  .menu-content.mobile-dark ul li .sub-menu-heading {
+    color: #ffffff !important;
+    opacity: 1;
+  }
+  .menu-content .menu > li.mega .container {
+    margin-top: 0;
+  }
+  .menu-content .menu > li > a:not(.btn) {
+    margin-bottom: 0 !important;
+  }
+  .menu-content ul {
+    width: 100%;
+    padding: 0;
+  }
+  .menu-content ul li {
+    padding: 0;
+    margin-right: 0 !important;
+  }
+  .menu-content ul li a {
+    opacity: 1 !important;
+    padding: 10px 10px 10px 35px;
+  }
+  .menu-content ul li .sub-menu-heading {
+    padding: 20px 10px 10px 35px;
+    opacity: 0.5;
+  }
+  [data-pages-direction="slideLeft"] {
+    display: block;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate(-100%, 0);
+    -webkit-transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .menu-opened {
+    overflow-y: hidden;
+  }
+  .menu-opened [data-pages-direction="slideLeft"] {
+    -webkit-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+    -ms-transform: translate(0%, 0);
+  }
+  [data-pages-direction="slideRight"] {
+    display: block;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    -ms-transform: translate(100%, 0);
+    -webkit-transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .menu-opened {
+    overflow-y: hidden;
+  }
+  .menu-opened [data-pages-direction="slideRight"] {
+    -webkit-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+    -ms-transform: translate(0%, 0);
+  }
+  [data-pages-direction="slideTop"] {
+    display: block;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    -ms-transform: translate(0, -100%);
+    -webkit-transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .menu-opened {
+    overflow-y: hidden;
+  }
+  .menu-opened [data-pages-direction="slideTop"] {
+    -webkit-transform: translate3d(0, calc(0% + 65px), 0);
+    transform: translate3d(0, calc(0% + 65px), 0);
+    -ms-transform: translate(0, calc(0% + 65px));
+  }
+  .innerpage #header {
+    padding:15px 0;
+  }
+
+  .menu-content {
+    display: none;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 250px;
+    background-color: #fff;
+    z-index: 10;
+    overflow-y: auto;
+  }
+
+
+  [data-pages-direction="slideLeft"] {
+    display: block;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    -ms-transform: translate(-100%, 0);
+    -webkit-transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .menu-opened {
+    overflow-y: hidden;
+  }
+  .menu-opened [data-pages-direction="slideLeft"] {
+    -webkit-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+    -ms-transform: translate(0%, 0);
+  }
+  [data-pages-direction="slideRight"] {
+    display: block;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    -ms-transform: translate(100%, 0);
+    -webkit-transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .menu-opened {
+    overflow-y: hidden;
+  }
+  .menu-opened [data-pages-direction="slideRight"] {
+    -webkit-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+    -ms-transform: translate(0%, 0);
+  }
+  [data-pages-direction="slideTop"] {
+    display: block;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    -ms-transform: translate(0, -100%);
+    -webkit-transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    transition: all 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  .menu-opened {
+    overflow-y: hidden;
+  }
+  .menu-opened [data-pages-direction="slideTop"] {
+    -webkit-transform: translate3d(0, calc(0% + 65px), 0);
+    transform: translate3d(0, calc(0% + 65px), 0);
+    -ms-transform: translate(0, calc(0% + 65px));
+  }
+  .header .menu > li > .classic {
+    top: 0 !important;
+    position: relative;
+    left: auto;
+    right: auto;
+    margin-left: 0;
+  }
+  
+
+.headerNav a {
+    padding: 10px;
+    color: #788195 !important;
+    border: 0 none !important;
+    display: block !important;
+    float: none !important;
+    font-size: 13px;
+    line-height: 22px !important;
+    margin: 0 !important;
+    height: auto;
+}
+.headerRight {
+    display: block;
+    float: none;
+    padding: 40px 0 0;
+}
+.headerNav {
+    margin: 0;
+    width: 100%;
+    display: block;
+}
+.loginbtn::before {
+    display:none;
+}
+.loginbtn {
+    padding: 0;
+    display: block;
+    float: none !important;
+}
+.loginbtn a.btn-primary {
+    width: 48%;
+    float: left;
+    margin: 10px 2px;
+}
+
+  .menu-content {
+    width: 270px;
+    overflow-y: auto;
+  }
+
+.afterloginlinks {
+    margin:0;
+    padding:0;
+  }
+  .afterloginlinks:before, .loginReg:before {
+    display:none;
+  }
+  .afterloginlinks .profilemenu .dropdown-menu {
+    right:-80px;
+  }
+  .afterloginlinks .profilePic {
+    top:-38px;
+  }
+/*end header menu*/
+}
+
+
+@media (max-width:767px) {
+.jobstatus li {
+    width: 32.54%;
+}
+.jobpostedlist {
+    padding: 0 4px;
+    margin: 0 0 20px;
+}
+}
+@media (max-width:639px) {
+.leftclear-xs {
+    clear:left;
+}    
+	.full-vxs {
+		width:100%;
+	}
+	.text-xs-left {
+    text-align: left;
+}
+.projectprice {
+	margin:0;
+}
+.jobpostedlist .urgent {
+	margin-bottom:10px;
+}
+.infolist>li .viewbtn {
+    float: left !important;
+    margin: 10px 0 0;
+}
+.lastlogin {
+    float: left !important;
+}
+.mainBody h1 {
+	font-size:26px;
+	line-height:32px;
+}
+}
+@media (max-width:479px) {
+	.recomndinfo .jobfilter {
+    font-size: 100%;
+    float: left !important;
+    margin: 8px 0 0;
+}
+.jobstatus {
+    margin: 0;
+}
+.jobstatus li {
+    width: 32.5%;
+}
+
+.bidnprojectstaus li {
+    font-size: 12px;
+    line-height: 18px;
+}
+.bidnprojectstaus span {
+    font-size: 44px;
+    line-height: 40px;
+}
+.bidnprojectstaus {
+    padding: 10px 14px;
+}
+.compareinfo {
+    text-align: left;
+    width: 100%;
+    margin: 10px 0;
+}
+}
+@media only screen and (min-width:480px) and (max-width:639px) {
+.bidnprojectstaus {
+    padding: 0 24px 30px;
+}
+.bidnprojectstaus span {
+    font-size: 37px;
+    line-height: 44px;
+}
+.bidnprojectstaus li {
+	padding:0 30px 0 69px;
+}
+.infolist>li .infodate {
+    width: 100%;
+}
+}
+@media only screen and (min-width:640px) and (max-width:767px) {
+.bidnprojectstaus {
+    padding: 0 24px 30px;
+}
+.bidnprojectstaus span {
+    font-size: 37px;
+    line-height: 21px;
+}
+.col-xs-lg-3 {
+    width:25%;
+}
+}
+@media only screen and (min-width:768px) and (max-width:1023px) {
+.bidnprojectstaus li, .jobstatus li {
+    width: 100%;
+    border: 0 none;
+}
+
+.infolist>li .viewbtn {
+    float: left !important;
+    margin: 10px 0 0;
+}
+.paginationstyl  .pagination > li > a, .paginationstyl  .pagination > li > span {
+	margin:0 3px;
+}
+.jobpostedlist {
+    padding: 9px 2px;
+    margin: 0 0 50px;
+}
+.headerNav a, .loginReg a.link {
+    margin-right:17px;
+}
+.profilemenu.opendropdown {
+    margin-right: 54px;
+}
+
+}
+@media only screen and (min-width:1024px) and (max-width:1278px) {
+.infolist>li .viewbtn {
+    float: left !important;
+    margin: 10px 0 0;
+}
+.jobpostedlist {
+    padding: 5px 14px;
+}
+.infolist>li .infodate {
+	width:100%;
+}
+.jobstatus li {
+    width: 32.4%;
+}
+.bidnprojectstaus li {
+    font-size: 13px;
+    line-height: 19px;
+    padding: 0 0px 0 62px;
+    margin: 0 0 22px;
+}
+
+.bidnprojectstaus span {
+    font-size: 43px;
+    line-height: 43px;
+}
+.btn-success.viewbtn {
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 17px;
+}
+
+.headerNav a, .loginReg a.link {
+    margin-right:17px;
+}
+.profilemenu.opendropdown {
+    margin-right: 52px;
+}
+.afterloginlinks>a {
+    padding: 0 21px 0 0;
+}
+.logo {
+    margin-top:5px;
+}
+
+}
+
+@media only screen and (min-width:1279px) and (max-width:1360px) {
+    .headerNav a, .loginReg a.link {
+    margin-right:17px;
+}
+.profilemenu.opendropdown {
+    margin-right: 54px;
+}
+.logo {
+    margin-top:5px;
+}
+}

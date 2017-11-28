@@ -1,0 +1,157 @@
+@extends('layouts.app')
+@section('title')
+Job bidding | Job Chats
+@endsection
+
+
+@section('content')
+
+<!--<div class="mainBody dashboard-container">-->
+<div class="mainSite innerpage">
+@include('layouts.jobs_common_header');
+
+<section class="container">
+	<div class="task_title_wrap clearfix">
+		<div class="task_titel pull-left">			
+			Payments
+		</div>
+		<div class="line_gp"></div>	
+		<div class="addtaskbtn clearfix pull-right">
+	    	<button id="opentask" class="pull-right">
+	    		<center><img src="{{ asset('assets/frontend/images/gbp_file.png') }}" class="img-responsive"></center>
+	    	</button>
+	    	<p class="pull-right">RAISE INVOICE</p>
+	    </div>	
+    </div>
+    <div class="infobox clearfix settingtab white-bg">
+    	<div class="col-lg-3 col-sm-3 col-md-3 col-xs-12">
+    		<div class="panel-body">
+    			<!-- Nav tabs -->
+			    <ul class="nav nav-tabs" role="tablist">
+			      <li role="presentation" class="active"><a href="#general" aria-controls="general" role="tab" data-toggle="tab"><span>&nbsp;</span>Money in escrow</a></li>
+			      <li role="presentation"><a href="#notification" aria-controls="notification" role="tab" data-toggle="tab"><span>&nbsp;</span>Withdraw Money</a></li>
+			      <li role="presentation"><a href="{{url('/invoice/view-invoice')}}" aria-controls="privacy"><span>&nbsp;</span>Invoices <p class="badge bg-success">3</p></a></li>
+			      <li role="presentation"><a href="#NDSA" aria-controls="NDSA" role="tab" data-toggle="tab"><span>&nbsp;</span>Balance Manager <small class="block">Add funds, Issue a refund, Manager automated payments.</small></a></li>
+			    </ul>
+    		</div>
+    	</div><!-- col ]] -->
+    	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+    		<div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="general">
+			    	<div class="panel-body">
+			    	@if(count($UserTransaction) > 0)
+			    	<div class="clearfix">
+    					<h2 class="catetitle pull-left">Available funds <small>(estimated GBP value)</small></h2>
+    					<div class="pprice text-success pull-right">
+    						@php
+    						$freelancerJobId = isset($getFreelancer->job_id) ? $getFreelancer->job_id : '';
+    						$freelancerProposalId = isset($getFreelancer->proposal_id) ? $getFreelancer->proposal_id : '';
+							$estimatedAmount = getProposalAmtByFreelancer($freelancerJobId, $freelancerProposalId);
+							$totalEstimatedAmount=0;
+							if(count($estimatedAmount) > 0){
+								foreach($estimatedAmount as $eachAmount){
+									$totalEstimatedAmount += $eachAmount->amount;
+								}
+							}
+							@endphp
+							£ {{ $totalEstimatedAmount }}
+    					</div>
+    				</div>
+    				<div class="table-responsive payboxtable">
+    					<table class="table">
+    						<thead>
+    							<tr>
+    								<th>Collaboration with</th>
+    								<th>Price Per Hour</th>
+    								<th>Agreed amount</th>
+    								<th>Status</th>
+    							</tr>
+    						</thead>
+    						<tbody>
+    							@if(count($getFreelancer) > 0)
+    							<tr>
+    								<td>
+	    								<div class="avtartask">
+								    		@php
+								    		$profilePic = isset($getFreelancer->user->profile_picture) ? $getFreelancer->user->profile_picture : '';
+								    		@endphp
+								    		<div class="profilePic small" style="background:url({{ profilePicPath($profilePic) }}) no-repeat center center / 100% auto;">
+												<div class="shape"></div>
+											</div>
+											<h4>
+												{{ isset($getFreelancer->user->first_name) ? $getFreelancer->user->first_name : '' }}
+												{{ isset($getFreelancer->user->last_name) ? $getFreelancer->user->last_name : '' }}
+												<small>{{ isset($getFreelancer->userDet->jobType->job_title) ? $getFreelancer->userDet->jobType->job_title : '' }}</small>
+											</h4>
+										</div>
+									</td>
+									<td>
+										<span class="etxt">£ {{ isset($getFreelancer->userDet->rate_per_hour) ? $getFreelancer->userDet->rate_per_hour : '0.00' }}</span>
+										<small class="block">PER HOUR</small>
+									</td>
+									<td><p class="amountbrder btn btn-default">
+										@php
+										$estimatedAmount = getProposalAmtByFreelancer($getFreelancer->job_id, $getFreelancer->proposal_id);
+										$totalEstimatedAmount=0;
+										if(count($estimatedAmount) > 0){
+											foreach($estimatedAmount as $eachAmount){
+												$totalEstimatedAmount += $eachAmount->amount;
+											}
+										}
+										@endphp
+										£ {{ $totalEstimatedAmount }}
+									</p></td>
+									<td>
+										@if(isset($UserTransaction->is_cashout_admin) && $UserTransaction->is_cashout_admin == 'N')
+											<form action="{{url('/payments/release-payments')}}" method="post" accept-charset="utf-8">
+												{{csrf_field()}}
+												<input type="hidden" name="job_id" value="{{$job_id}}">
+												<input type="hidden" name="proposal_id" value="{{$proposal_id}}">
+												<input type="hidden" name="invoice_for_user" value="{{$proposalByUser}}">
+												<input type="hidden" name="gross_amt" value="{{$UserTransaction->amount}}">
+
+												<button type="submit" class="btn btn-warning release_amount">Release</button>
+											</form>
+										@else
+											<p class="text-success">Released</p>
+										@endif
+									</td>
+    							</tr>
+    							@endif
+    						</tbody>
+    					</table>
+    				</div>
+    				<div class="total_paybox text-right">
+						@if(isset($UserTransaction->is_cashout_admin) && $UserTransaction->is_cashout_admin == 'N')
+							TOTAL: £ 00.00<br>
+							REMAINING: £ {{$UserTransaction->amount}}
+						@else
+							TOTAL: £ {{$UserTransaction->amount}}<br>
+							REMAINING: £ 00.00
+						@endif
+					</div>
+					@else
+						<div class="clearfix">
+	    					<h2 class="catetitle pull-left">No Data Available</h2>
+	    				</div>
+					@endif
+    			</div>
+			    </div><!-- end tab one ]] -->
+		  </div>
+    	</div><!--  col ]] -->
+    </div>
+</section>
+</div>
+@endsection
+
+
+@section('customScript')
+<script>
+$(document).ready(function(){
+    $("#opentask").click(function(){
+        $(".taskcontent").toggleClass("open");
+    });
+
+});
+</script>
+@endsection
